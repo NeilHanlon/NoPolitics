@@ -1,12 +1,19 @@
 {
-  "name": "NoPolitics",
-  "version": "1.0",
-  "manifest_version": 2,
-  "description": "Removing Political Facebook Posts, Tweets, etc.",
-  "browser_action": {
-    "default_icon": "icon.png"
-  },
-  "permissions": [
+    "name": "NoPolitics",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Removing Political Facebook Posts, Tweets, etc.",
+    "browser_action": {
+        "default_icon": "./assets/images/icon.png",
+        "default_popup": "menu.html"
+    },
+    "icons": {
+        "16": "./assets/images/icon_16.png",
+        "48": "./assets/images/icon_48.png",
+        "64": "./assets/images/icon_64.png",
+        "128": "./assets/images/icon_128.png"
+    },
+    "permissions": [
     "http://api.flickr.com/"
-  ]
+    ]
 }
