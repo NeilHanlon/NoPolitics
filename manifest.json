@@ -7,6 +7,17 @@
         "default_icon": "./assets/images/icon.png",
         "default_popup": "menu.html"
     },
+    "background": {
+        "scripts": ["assets/js/background.js"]
+    },
+    "content_scripts" : [
+    {
+        "matches" : [ "http://*/*" ],
+        "js" : [ "assets/js/regex.js" ],
+        "run_at" : "document_idle",
+        "all_frames" : true
+    }
+    ],
     "icons": {
         "16": "./assets/images/icon_16.png",
         "48": "./assets/images/icon_48.png",
@@ -14,6 +25,7 @@
         "128": "./assets/images/icon_128.png"
     },
     "permissions": [
-    "http://api.flickr.com/"
+    "http://api.flickr.com/",
+    "experimental"
     ]
 }
