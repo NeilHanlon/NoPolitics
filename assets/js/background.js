@@ -2,18 +2,18 @@
  * Handles requests sent by the content script.  Shows an infobar.
  */
 function onRequest(request, sender, sendResponse) {
-  // The number of matches is sent in the request - pass it to the
-  // infobar.
-  var url = "../../infobar.html#" + request.count;
+    // The number of matches is sent in the request - pass it to the
+    // infobar.
+    var url = "../../infobar.html#" + request.count;
+    
+    // Show the infobar on the tab where the request was sent.
+    chrome.experimental.infobars.show({
+        tabId: sender.tab.id,
+        path: url
+    });
 
-  // Show the infobar on the tab where the request was sent.
-  chrome.experimental.infobars.show({
-    tabId: sender.tab.id,
-    path: url
-  });
-
-  // Return nothing to let the connection be cleaned up.
-  sendResponse({});
+    // Return nothing to let the connection be cleaned up.
+    sendResponse({});
 };
 
 // Listen for the content script to send a message to the background page.
